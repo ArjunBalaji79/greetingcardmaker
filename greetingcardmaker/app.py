@@ -4,10 +4,11 @@ import ollama
 from fpdf import FPDF
 
 # Function to generate wishes using Ollama, You can change the prompt based on the event, we can reuse this for rec also lol
+# Feel free to better prompting, this works like 80-90% without hallucinating or doing something weird, so make sure to proof read"
 def generate_wishes(name):
     prompt = (f"Write a heartfelt thank you message for Teacher's Day to {name}, a volunteer leader for the volunteers at U&I. "
               "Mention their dedication, impact on children's lives, and role as an excellent leader and role model. Their work is often unoticed but we want to recognise and appreciate their efforts. "
-              "Keep it under 200 words and print only the message, dont say anything else. End the message with 'Warm regards, Arjun and Siri'.")
+              "Keep it under 200 words and print only the message, don't say anything else. End the message with 'Warm regards, Leader A and Leader B'.") # make sure you change this Leader A and B accordingly
     response = ollama.generate(model="llama3", prompt=prompt)
     return response['response']
 
@@ -28,7 +29,7 @@ def create_pdf(name, wishes, output_folder):
     pdf.ln(10)
 
     # Set the path to your image file, can be anything 
-    image_path = "/Users/balajis/Desktop/nonsense projects/teacher-with-student-illustration-isolated-vector.jpg" 
+    image_path = "image_path_here" 
     if os.path.exists(image_path):
         pdf.image(image_path, x=60, y=pdf.get_y(), w=90, h=60)  
 
