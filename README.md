@@ -6,4 +6,4 @@ There's not much of a installation guide now, but will eventually put one. Basic
 
 
 ## Usage
-Just put your volunteers names in the csv file and image, add the path to the app.py code 
+Just put your volunteers names in the csv file and add any image you like (christmas day themed, teacher's day, etc.) , add the path to the app.py code 
